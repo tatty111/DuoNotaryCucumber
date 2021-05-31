@@ -21,11 +21,8 @@ public class OrderInfoPageStepDefs {
  new HomepagePage().enterTravelingNotarizationPage();
 
         OrderInfoPage oip = new OrderInfoPage();
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         oip.addressField.sendKeys("11341 Crescent Dr, Fairfax, VA 22030, USA");
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         oip.hiddenAddressField.click();
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         oip.clickNextButton();
 //        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //        String expectedTitle = "Traveling (mobile) notary services | DuoNotary";
@@ -44,7 +41,6 @@ public class OrderInfoPageStepDefs {
     public void the_user_selects_home_buyer_seller_from_the_dropdown_menu() {
         OrderInfoPage oip = new OrderInfoPage();
         new Select(oip.getRealEstateAndRefinanceRequestorSelect).selectByVisibleText("Home buyer/seller");
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
 
@@ -58,35 +54,21 @@ public class OrderInfoPageStepDefs {
         oip.getRealEstateAndRefinancePrintingIncrease.click();
         oip.getRealEstateAndRefinancePrintingIncrease.click();
 
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-        String expectedTotal1 = "300.00";
-//        Assert.assertTrue(driver.getPageSource().contains(expectedTotal1));
-//
-//        System.out.println(totalPrice);
-//        Assert.assertTrue(totalPrice.equals(expectedTotal1));
-
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        
+        String expectedTotal1 = "$300.00";
+        Assert.assertTrue(oip.totalPrice.getText().equals(expectedTotal1));
 
         oip.getGetRealEstateAndRefinancePrintingDecrease.click();
         oip.getGetRealEstateAndRefinancePrintingDecrease.click();
 
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-//        String expectedTotal2 = "250.00";
-//        String totalPrice = oip.totalPrice.getText();
-//        Assert.assertTrue(driver.getPageSource().contains(expectedTotal2));
-//        Assert.assertTrue(totalPrice.equals(expectedTotal2));
+        String expectedTotal2 = "$250.00";
+         Assert.assertTrue(oip.totalPrice1.getText().equals(expectedTotal2));
     }
 
 
     @Then("In Additional Services increases Drop off at post office by ten and decreases by three and verifies the price")
     public void in_additional_services_increases_drop_off_at_post_office_by_and_decreases_by_and_verifies_the_price() {
 
-
         OrderInfoPage oip = new OrderInfoPage();
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
         oip.getRealEstateAndRefinanceDropOffIncrease.click();
         oip.getRealEstateAndRefinanceDropOffIncrease.click();
@@ -99,21 +81,15 @@ public class OrderInfoPageStepDefs {
         oip.getRealEstateAndRefinanceDropOffIncrease.click();
         oip.getRealEstateAndRefinanceDropOffIncrease.click();
 
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-        String expectedTotal5 = "500.00";
-        Assert.assertTrue(driver.getPageSource().contains(expectedTotal5));
+        String expectedTotal1 = "500.00";
+        Assert.assertTrue(oip.totalPrice2.getText().equals(expectedTotal1));
 
         oip.getGetRealEstateAndRefinancePrintingDecrease.click();
         oip.getGetRealEstateAndRefinancePrintingDecrease.click();
         oip.getGetRealEstateAndRefinancePrintingDecrease.click();
 
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-        String expectedTotal6 = "425.00";
-        Assert.assertTrue(driver.getPageSource().contains(expectedTotal6));
-
-//        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        String expectedTotal2 = "425.00";
+        Assert.assertTrue(oip.totalPrice3.getText().equals(expectedTotal2));
     }
 
 

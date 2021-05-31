@@ -130,6 +130,15 @@ public class OrderInfoPage {
     @FindBy(xpath = "//div[normalize-space()='$300.00']")
     public WebElement totalPrice;
 
+    @FindBy(xpath = "//div[normalize-space()='$250.00']")
+    public WebElement totalPrice1;
+
+    @FindBy(xpath = "//div[normalize-space()='$500.00']")
+    public WebElement totalPrice2;
+
+    @FindBy(xpath = "//div[normalize-space()='$425.00']")
+    public WebElement totalPrice3;
+
 
 
 
