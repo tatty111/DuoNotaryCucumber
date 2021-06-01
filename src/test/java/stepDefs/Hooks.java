@@ -26,7 +26,8 @@ public class Hooks {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(ConfigReader.getProperty("url"));
         BrowserUtilities.jsClick(Driver.getDriver().findElement(By.xpath("//button [contains(text(), 'Accept')]")));
-
+//        logger = reporter.createTest("TESTCASE " + count);
+//        count++;
 
     }
 
@@ -45,7 +46,7 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", "failed_scenario");
         }
 
-//        Driver.quitDriver();
+        Driver.quitDriver();
     }
 
 
