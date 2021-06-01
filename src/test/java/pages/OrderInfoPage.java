@@ -15,6 +15,8 @@ public class OrderInfoPage {
     @FindBy (xpath = "//button[@type='btn']")
     public WebElement backButton;
 
+    // yana practice
+
     @FindBy (xpath = "//button[@class = 'btn myBtn nextColor']")
     public WebElement nextButton;
 
