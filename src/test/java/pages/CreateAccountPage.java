@@ -13,48 +13,40 @@ public class CreateAccountPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id = "customer_firstname")
-    public WebElement firstName;
+    @FindBy(xpath = "//input[@name='firstName']")
+    public WebElement userFirstName;
 
-    @FindBy(id = "customer_lastname")
-    public WebElement lastName;
+    @FindBy(xpath = "//input[@name='lastName']")
+    public WebElement userLastName;
 
-    @FindBy(id = "passwd")
-    public WebElement password;
+    @FindBy(xpath = "//input[@name='email']")
+    public WebElement userEmail;
 
-    @FindBy(id = "address1")
-    public WebElement address;
+    @FindBy(xpath = "//input[@name='phoneNumber']")
+    public WebElement userPhoneNum;
 
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement userPassword;
 
-    @FindBy(id = "city")
-    public WebElement city;
+    @FindBy(xpath = "//input[@name='prePassword']")
+    public WebElement userPasswordReapet;
 
-    @FindBy(id = "postcode")
-    public WebElement zipcode;
-
-    @FindBy(id = "phone_mobile")
-    public WebElement phone;
-
-    @FindBy(id = "submitAccount")
-    public WebElement registerButton;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement singInButton;
 
 
-    public void chooseDob(){
-        new Select(Driver.getDriver().findElement(By.id("days"))).selectByValue( (1+ (int)(Math.random()*31)) + "");
-        new Select(Driver.getDriver().findElement(By.id("months"))).selectByValue( (1+ (int)(Math.random()*12)) + "");
-        new Select(Driver.getDriver().findElement(By.id("years"))).selectByValue( (1900+ (int)(Math.random()*122)) + "");
-    }
+    @FindBy(xpath = "//div[@class='labelBlockModal rightControl']")
+    public WebElement usercheckbox;
 
+    @FindBy(xpath = "//span[@class='align-self-center alert-body']")
+    public WebElement CongratulationsMessage;
 
-    public void chooseState(){
-        new Select(Driver.getDriver().findElement(By.id("id_state"))).selectByValue( (1+ (int)(Math.random()*53)) + "");
+    @FindBy(xpath = "//button[@class='ok-button align-self-end']")
+    public WebElement ButtonOk;
 
-    }
+    @FindBy(id = "5gr9b76cmd")
+    public WebElement alertMsg;
 
-    public void chooseState(String state){
-        new Select(Driver.getDriver().findElement(By.id("id_state"))).selectByVisibleText(state);
-
-    }
 
 
 }

@@ -16,9 +16,7 @@ public class LoginTestsStepDefs {
         System.out.println(faker.internet().safeEmailAddress());
 
 
-      //  faker.address().fullAddress()
 
-        //
     }
 
     @When("The user navigates and clicking on menu button -> to be trasnfered to SING IN page")
@@ -38,12 +36,17 @@ public class LoginTestsStepDefs {
         Assert.assertTrue(logpage.LogOutButton.getText().contains("Log Out")); }
 
 
-    // Data Provider:
+    // Faker()
 
     @Then("The user should fails by putting the wrong credentials {string}, {string}")
     public void the_user_should_fails_by_putting_the_wrong_credentials(String username, String password) {
-
-
+        LoginPage logpage = new LoginPage();
+        logpage.userName.sendKeys(new Faker().internet().emailAddress());
+        logpage.password.sendKeys(new Faker().internet().password());
+        logpage.keepMeLogInButton.click();
+        BrowserUtilities.jsClick(logpage.loginButton);
+        System.out.println(logpage.errorMessage.getText());
+        Assert.assertTrue(logpage.errorMessage.isDisplayed());
     }
 
 

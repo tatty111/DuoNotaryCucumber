@@ -31,7 +31,8 @@ public class OrderInfoPageIana {
     public WebElement uploadBotton;
 
     public void uploadBottonMethod()  {
-        uploadBotton.sendKeys( "/Users/ianagrytsenko/IdeaProjects/DUON-B4-CucumberBDD/DIP.pdf");
+        uploadBotton.sendKeys( "DIP.pdf");
+       // System.getProperty(“user.dir” + IdeaProjects/DUON-B4-CucumberBDD/DIP.pdf)
     }
 
 

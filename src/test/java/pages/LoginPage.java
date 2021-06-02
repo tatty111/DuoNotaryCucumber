@@ -21,6 +21,13 @@ public class LoginPage {
     @FindBy(xpath = "//div[@class='menuBlock']")
     public WebElement menuButton;
 
+    @FindBy(xpath = "//div[@class='hasAccount']//span")
+    public WebElement createAccountButton;
+
+
+
+
+
     @FindBy(id = "username")
     public WebElement userName;
 
