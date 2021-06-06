@@ -76,10 +76,11 @@ public class CreateAccountStepDefs {
     public void the_user_passes_the_information_and_the_name_should_be_correct() throws InterruptedException {
         ExcelUtils file = new ExcelUtils("MOCK_DATA.xlsx", "data");
         List<Map<String, String>> listOfMaps = file.getDataAsMap();
-
+        System.out.println(listOfMaps);
 
         for (int i = 0; i < listOfMaps.size() ; i++) {
 
+            Thread.sleep(1000);
             LoginPage logpage = new LoginPage();
             logpage.menuButton.click();
             logpage.createAccountButton.click();
@@ -90,23 +91,21 @@ public class CreateAccountStepDefs {
 
             createAccount.userFirstName.sendKeys(map.get("first_name"));
             createAccount.userLastName.sendKeys(map.get("last_name"));
-            createAccount.userEmail.sendKeys(map.get("email address"));
-            createAccount.userPhoneNum.sendKeys(map.get("phone"));
+            //createAccount.userEmail.sendKeys(map.get("email address"));
+            createAccount.userEmail.sendKeys(new Faker().internet().emailAddress());
+            createAccount.userPhoneNum.sendKeys(new Faker().phoneNumber().phoneNumber());
+
             createAccount.userPassword.sendKeys(map.get("password"));
             createAccount.userPasswordReapet.sendKeys(map.get("password"));
 
             createAccount.usercheckbox.click();
             BrowserUtilities.jsClick(createAccount.singInButton);
-            Thread.sleep(2000);
 
+            Thread.sleep(2000);
+           // System.out.println(createAccount.CongratulationsMessage.getText());
             Assert.assertTrue(createAccount.CongratulationsMessage.getText().contains("Congratulations! Your registration is almost complete, please verify your email by clicking the link we emailed you."));
             BrowserUtilities.jsClick(createAccount.ButtonOk);
 
-            if(createAccount.alertMsg.isDisplayed()){
-                Thread.sleep(500);
-                Driver.getDriver().get(ConfigReader.getProperty("url"));
-                BrowserUtilities.jsClick(Driver.getDriver().findElement(By.xpath("//button [contains(text(), 'Accept')]")));
-            }
         }
         }
 }

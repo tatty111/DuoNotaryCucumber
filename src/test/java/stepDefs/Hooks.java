@@ -24,12 +24,14 @@ public class Hooks {
     public void setupScenario(){
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().manage().window().maximize();
-        Driver.getDriver().get(ConfigReader.getProperty("url"));
-        BrowserUtilities.jsClick(Driver.getDriver().findElement(By.xpath("//button [contains(text(), 'Accept')]")));
+//        Driver.getDriver().get(ConfigReader.getProperty("url"));
+//        BrowserUtilities.jsClick(Driver.getDriver().findElement(By.xpath("//button [contains(text(), 'Accept')]")));
 //        logger = reporter.createTest("TESTCASE " + count);
 //        count++;
 
     }
+
+
 
 //    @Before ("@db")  // this before hook will run only before the scenarios that are tagged with @db
 //    public void setupDB(){
