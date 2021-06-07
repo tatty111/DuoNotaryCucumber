@@ -1,11 +1,12 @@
 #DAY 83. WEDNESDAY. 05/19/2021. CUCUMBER. APACHI PO..
+
 Feature: Verify the creation of an account
 
 
   Background:
     Given The user is on the homepage
 
-
+  @8creataccount
   Scenario: Verify creation of an account
     When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
     Then The user should click on creation of an account button
@@ -13,7 +14,7 @@ Feature: Verify the creation of an account
     And The Congradulation msg should apear "Congratulations! Your registration is almost complete, please verify your email by clicking the link we emailed you."
 
 
-
+  @8creataccountDatatable
   Scenario: Verify user registration using datatable
     When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
     Then The user should click on creation of an account button
