@@ -1,6 +1,7 @@
+
 Feature: Verify the HomePage tables
 
-
+  @7homeTable
   Scenario: Verify product names
     Given The user is on the homepage
     Then The following products should be displayed
@@ -13,7 +14,7 @@ Feature: Verify the HomePage tables
     And The page title should be "DuoNotary | Notarize documents online or in-person at your convenient time and location"
 
 
-
+  @7homeTable2
   Scenario: Verify product names WebelementsWhychooseDuoNotary
     Given The user is on the homepage
     Then The following products should be displayed as
@@ -23,8 +24,7 @@ Feature: Verify the HomePage tables
       | Affordable prices                              |
     And The page should contain text "Why choose DuoNotary"
 
-
-  @scenario
+  @7homeTableExamples
   Scenario Outline: Verify product names outline
     Given The user is on the homepage
     When The user clicks on "<link>"

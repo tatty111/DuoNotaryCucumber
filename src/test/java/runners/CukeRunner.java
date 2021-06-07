@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 
-        tags = "@1",
+     //   tags = "@2creataccount, @5login, @6, @1Bagstables, @3homeTable, @10taniaTRAVELLING, @taniaRealEstate, @9REMOTE, @8Schedule, @8Data, @7price",
         features = "src/test/resources/features", // path to the feature files folder
         glue = "stepDefs" // path to step definition classes (glue code, implementation code)
       // , dryRun = true    // skips the actual run of the scenarios, we enable this to generate implementation snippets quickly

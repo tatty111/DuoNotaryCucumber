@@ -5,13 +5,13 @@ Feature: Verify the Login test functions
   Background:
     Given The user is on the homepage
 
-
+  @6login
   Scenario: Verify the positive Login test
     When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
     Then The user should login successfully into his account and see the Main page with Upcoming orders
 
 
-
+  @6login_Negative
   Scenario: Verify the negative Login test
     When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
     Then The user should fails by putting the wrong credentials "username", "password"
