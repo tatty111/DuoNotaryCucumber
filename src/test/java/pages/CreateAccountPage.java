@@ -38,14 +38,17 @@ public class CreateAccountPage {
     @FindBy(xpath = "//div[@class='labelBlockModal rightControl']")
     public WebElement usercheckbox;
 
-    @FindBy(xpath = "//span[@class='align-self-center alert-body']")
+    @FindBy(xpath = "//span[contains(text(), 'Congratulations! Your registration is almost complete, please verify your email by clicking the link we emailed you.')]")
     public WebElement CongratulationsMessage;
 
     @FindBy(xpath = "//button[@class='ok-button align-self-end']")
     public WebElement ButtonOk;
 
-    @FindBy(id = "5gr9b76cmd")
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']")
     public WebElement alertMsg;
+
+    @FindBy(id = "checkbox3")
+    public WebElement checkbox3;
 
 
 

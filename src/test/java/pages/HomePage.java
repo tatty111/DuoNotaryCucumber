@@ -15,6 +15,9 @@ public class HomePage {
         PageFactory.initElements(Driver.getDriver(),this );
     }
 
+    @FindBy(xpath = "//button [contains(text(), 'Accept')]")
+    public WebElement popUpWindow;
+
     @FindBy(xpath = "//div[@class='services']//div")
     public List<WebElement> actualListOfWebelements;
 
