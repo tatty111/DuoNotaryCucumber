@@ -1,11 +1,17 @@
 package stepDefs;
 
 
+import com.github.javafaker.Faker;
+import com.mysql.cj.log.Log;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.OrderInfoPageIana;
-import pages.RemoteNotarizationPage;
+import jdk.internal.instrumentation.Logger;
+import org.junit.Assert;
+import pages.*;
+import utilities.BrowserUtilities;
 import utilities.Driver;
+
+import static stepDefs.Hooks.*;
 
 public class OrderInfoIanaStepDefs {
 
@@ -46,6 +52,44 @@ public class OrderInfoIanaStepDefs {
         }else{
             System.out.println("Schedule -> Order info is Failed");
         }
+
+    }
+
+
+    @Then("Verify the Data and Time Section Day {string}")
+    public void verify_the_data_and_time_section_day(String two) throws InterruptedException {
+
+
+        Data_TimePage date = new Data_TimePage();
+        System.out.println(date.text_DataTime.getText());
+        date.dateAndTimeSelector(2);
+
+
+        Thread.sleep(1000);
+        new OrderInfoPage().nextButton.click();
+        Thread.sleep(1000);
+    }
+
+    @Then("Verify User info section using Faker class")
+    public void verify_user_info_section_using_faker_class() throws InterruptedException {
+        CreateAccountPage createAccount = new CreateAccountPage();
+        Faker fakeData = new Faker();
+        String fakepassword = fakeData.internet().password(8,
+                10,true, false,true);
+        System.out.println(fakepassword);
+        createAccount.userFirstName.sendKeys(fakeData.name().firstName());
+        createAccount.userLastName.sendKeys(fakeData.name().lastName());
+        createAccount.userEmail.sendKeys(fakeData.internet().emailAddress());
+        createAccount.userPhoneNum.sendKeys(fakeData.phoneNumber().phoneNumber());
+        createAccount.userPassword.sendKeys(fakepassword);
+        createAccount.userPasswordReapet.sendKeys(fakepassword);
+
+        createAccount.checkbox3.click();
+        BrowserUtilities.jsClick(new OrderInfoPage().nextButton);
+
+        Thread.sleep(1000);
+        System.out.println(Driver.getDriver().getTitle());
+//        Assert.assertTrue(new OrderInfoPage().nextButton.getText().contains("Booked"));
 
     }
 

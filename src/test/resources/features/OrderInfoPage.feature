@@ -1,6 +1,8 @@
 Feature: For Traveling Notarization entry
   As a user I should be able to go to Homepage, click on Traveling Notarization, enter a valid address and click next
 
+  Background:
+  Given The user is on the homepage
 
 
   Scenario: Testing Real Estate Refinance

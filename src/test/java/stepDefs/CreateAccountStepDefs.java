@@ -55,7 +55,9 @@ public class CreateAccountStepDefs {
 
     @Then("The user should pass following info and click sign in button")
     public void the_user_should_pass_following_info_and_click_sign_in_button(List<Map<String,String>> dataTable) throws InterruptedException {
+
         CreateAccountPage createAccount = new CreateAccountPage();
+
         Map<String, String> userInfo = dataTable.get(0);
 
         createAccount.userFirstName.sendKeys(userInfo.get("first_name"));

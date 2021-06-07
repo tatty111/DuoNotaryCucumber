@@ -10,10 +10,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 
-        tags = "@current",
+        tags = "@1",
         features = "src/test/resources/features", // path to the feature files folder
         glue = "stepDefs" // path to step definition classes (glue code, implementation code)
-      //  , dryRun = true    // skips the actual run of the scenarios, we enable this to generate implementation snippets quickly
+      // , dryRun = true    // skips the actual run of the scenarios, we enable this to generate implementation snippets quickly
         ,stepNotifications = true  // will enable detailed step reports
         ,plugin = {"summary",  // generates  a detailed report after each run and also generates snippets for unimplemented steps
         "pretty",  // adds more details to a console output

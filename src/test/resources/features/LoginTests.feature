@@ -3,7 +3,7 @@ Feature: Verify the Login test functions
 
 
   Background:
-#    Given The user is on the homepage
+    Given The user is on the homepage
 
 
   Scenario: Verify the positive Login test

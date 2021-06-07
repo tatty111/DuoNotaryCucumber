@@ -10,9 +10,4 @@ Feature: Verify the HomePage functions
     Then The user can clicks on plus button to get 1 quantity of a document
     And The price of the product should be $30.00
 
-  Scenario:  Validate the price of a document
 
-    When The user clicks on a product "Printed Chiffon Dress"
-    Then The user should be taken to product details page with title "Printed Chiffon Dress"
-    And The price of the product should be 16.40
-    And The default quantity should be 2

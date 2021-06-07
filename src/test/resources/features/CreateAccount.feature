@@ -2,20 +2,21 @@
 Feature: Verify the creation of an account
 
 
-#  Background:
-#    When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
-#    Then The user should click on creation of an account button
+  Background:
+    Given The user is on the homepage
 
 
   Scenario: Verify creation of an account
-#    When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
-#    Then The user should click on creation of an account button
+    When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
+    Then The user should click on creation of an account button
     Then The user should fill his data info and click sign in button
     And The Congradulation msg should apear "Congratulations! Your registration is almost complete, please verify your email by clicking the link we emailed you."
 
 
 
   Scenario: Verify user registration using datatable
+    When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
+    Then The user should click on creation of an account button
     Then The user should pass following info and click sign in button
       | first_name | last_name | email address  | phone        | password   | repassword |
       | Lemmy      | Innocenti | fgfg@gmail.com | 515-225-0199 | Tampa1234  | Tampa1234  |
@@ -23,10 +24,9 @@ Feature: Verify the creation of an account
 
 
 
-
-
-
   Scenario Outline: Verify user registration using Outline datatable
+    When The user navigates and clicking on menu button -> to be trasnfered to SING IN page
+    Then The user should click on creation of an account button
     Then The user should pass following info and click sign in button
       | first_name | last_name | email address  | phone        | password   | repassword |
       | <first_name>      | <last_name> | <email address> | <phone> | <password>  | <repassword>  |
@@ -45,7 +45,11 @@ Feature: Verify the creation of an account
 #    //DAY 83. WEDNESDAY. 05/19/2021. CUCUMBER. APACHI PO..
   @current
   Scenario: Verify user registration using external excel file
-    And The user passes the information and the name should be correct
+#    Given The user is on the homepage
+    Then The user passes the information and the name should be correct
+
+
+
 
 
 

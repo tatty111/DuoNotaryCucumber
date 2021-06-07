@@ -10,6 +10,7 @@ Feature: Verify the HomePage functions
   Scenario: Verify the REMOTE NOTARIZATION -> Schedule Page
     Then The user should land on Schedule online notary services page
 
+@1
   Scenario: Verify the REMOTE NOTARIZATION -> Now Page
     Then The user should land on Now online notary services page
 

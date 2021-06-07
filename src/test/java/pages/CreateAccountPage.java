@@ -47,6 +47,9 @@ public class CreateAccountPage {
     @FindBy(xpath = "//div[@class='Toastify__toast-body']")
     public WebElement alertMsg;
 
+    @FindBy(id = "checkbox3")
+    public WebElement checkbox3;
+
 
 
 }

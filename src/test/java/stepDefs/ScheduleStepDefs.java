@@ -6,13 +6,19 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.HomePage;
 import pages.RemoteNotarizationPage;
+import utilities.BrowserUtilities;
+import utilities.ConfigReader;
 import utilities.Driver;
 
 public class ScheduleStepDefs {
 
     @Given("The user is on the homepage")
     public void the_user_is_on_the_homepage() {
+        HomePage home = new HomePage();
+        Driver.getDriver().get(ConfigReader.getProperty("url"));
+        BrowserUtilities.jsClick(home.popUpWindow);
     }
 
     @When("The user navigates and clicking on REMOTE NOTARIZATION window")
